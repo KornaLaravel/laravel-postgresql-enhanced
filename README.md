@@ -1029,6 +1029,10 @@ Depending on your requirements a search term can be handled completely different
     ```php
     Book::whereFullText(['title', 'description'], '"PostgreSQL database" -MySQL', ['mode' => 'websearch'])->get();
     ```
+* `none`: No mode is used, the search term is directly passed to the `to_tsquery` function. This gives you the most control over the search term and behavior, but you must sanitize the input yourself and create a valid `tsquery` search term.
+    ```php
+    Book::whereFullText(['title', 'description'], 'PostgreSQL & database', ['mode' => 'none'])->get();
+    ```
 
 #### Weighting
 
