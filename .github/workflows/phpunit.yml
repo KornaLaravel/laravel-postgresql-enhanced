@@ -29,7 +29,7 @@ jobs:
             testbench: 8.*
           - laravel: 11.*
             doctrine: ^4.0
-            testbench: 9.*
+            testbench: ^9.15.0
           - laravel: 12.*
             doctrine: ^4.0
             testbench: 10.*
